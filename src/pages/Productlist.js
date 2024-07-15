@@ -15,25 +15,13 @@ const columns = [
     dataIndex: "title",
     sorter: (a, b) => a.title.length - b.title.length,
   },
-  {
-    title: "Brand",
-    dataIndex: "brand",
-    sorter: (a, b) => a.brand.length - b.brand.length,
-  },
+
   {
     title: "Category",
     dataIndex: "category",
     sorter: (a, b) => a.category.length - b.category.length,
   },
-  {
-    title: "Color",
-    dataIndex: "color",
-  },
-  {
-    title: "Price",
-    dataIndex: "price",
-    sorter: (a, b) => a.price - b.price,
-  },
+
   {
     title: "Action",
     dataIndex: "action",
@@ -51,10 +39,9 @@ const Productlist = () => {
     data1.push({
       key: i + 1,
       title: productState[i].title,
-      brand: productState[i].brand,
+   
       category: productState[i].category,
-      color: productState[i].color,
-      price: `${productState[i].price}`,
+  
       action: (
         <>
           <Link to="/" className=" fs-3 text-danger">

@@ -20,6 +20,7 @@ import {BiCategoryAlt } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom';
 import { IoIosColorFill } from "react-icons/io";
 import {FaClipboardList , FaBloggerB} from 'react-icons/fa';
+import { Outlet } from 'react-router-dom';
 import { FaRegUser } from "react-icons/fa";
 const { Header, Sider, Content } = Layout;
 
@@ -153,16 +154,26 @@ const MainLayout = () => {
             height: 64,
           }}
         />
-            <div className='d-flex gap-3 align-items-center'>
-            <div className='position-relative'><IoIosNotifications className='fs-4'/> 
-            <span className='badge bg-warning rounded-circle p-1 position-absolute'>3</span></div>
-            <div className='d-flex gap-3 align-items-center'><div>
-              <img width={32} height={32} src="https://th.bing.com/th/id/OIP.6aC0OplfDDYxuoEGXj3k_gHaHa?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""></img>
-              </div>
-              <div>
-                <h5 className='mb-0'>Navdeep</h5>
-                <p className='mb-0'>navdeep@gmail.com</p>
-                </div></div></div>
+        <div className='d-flex gap-4 align-items-center'>
+       <div className='position-relative'><IoIosNotifications className='fs-4'/> 
+       <span className='badge bg-warning rounded-circle p-1 position-absolute'>3</span></div>
+       <div className='d-flex gap-3 align-items-center dropdown' >
+        <div>{/*<img  width={32} height={32} src='https://stroyka-admin.html.themeforest.scompiler.ru/variants/ltr/images/customers/customer-4-64x64.jpg' alt='' />*/}</div>
+        <div roles="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" >
+       {     /*<h5 className='mb-0'>Sahar</h5>
+            <p className='mb-0'>cherifsahar97@gmail.com</p>*/}
+        </div>
+        <div className='dropdown-menu' aria-labelledby='dropdownMenuLink'>
+<li >
+  <Link className='dropdown-item py-1 mb-1' style={{height:"auto" , lineHeight:"20px"}} to='/'>View Profile</Link>
+</li>
+<li >
+  <Link className='dropdown-item py-1 mb-1'style={{height:"auto" , lineHeight:"20px"}} to='/'>Signout</Link>
+</li>
+
+        </div>
+       </div>
+            </div>
       </Header>
       <Content
           style={{
@@ -184,7 +195,6 @@ const MainLayout = () => {
             theme="light"
           />
           <Outlet />
-         
         </Content>
     </Layout>
   </Layout>

@@ -45,8 +45,10 @@ main::-webkit-scrollbar{
 }
 .sm-logo{
   display: none;
+  transition: 0.3s;
 
 }
+
 .ant-layout-sider-collapsed .lg-logo{
   display: none;
 

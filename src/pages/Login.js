@@ -9,8 +9,7 @@ import { login } from "../features/auth/authSlice";
 let schema = yup.object().shape({
   email: yup
     .string()
-    .email("Email should be valid")
-    .required("Email is Required"),
+    .required("email is Required"),
   password: yup.string().required("Password is Required"),
 });
 const Login = () => {
@@ -53,7 +52,7 @@ const Login = () => {
         <form action="" onSubmit={formik.handleSubmit}>
           <CustomInput
             type="text"
-            label="Email Address"
+            label="email"
             id="email"
             name="email"
             onCh={formik.handleChange("email")}
@@ -76,17 +75,17 @@ const Login = () => {
             {formik.touched.password && formik.errors.password}
           </div>
           <div className="mb-3 text-end">
-            <Link to="forgot-password" className="">
+            <Link to="forget-password" className="">
               Forgot Password?
             </Link>
           </div>
-          <button
+          <Link to="/admin"
             className="border-0 px-3 py-2 text-white fw-bold w-100 text-center text-decoration-none fs-5"
             style={{ background: "#ffd333" }}
             type="submit"
           >
             Login
-          </button>
+          </Link>
         </form>
       </div>
     </div>
